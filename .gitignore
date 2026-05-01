@@ -1,0 +1,47 @@
+# SDK (too large, download separately)
+sdk/
+
+# Backup files
+*.tar.gz
+*.zip
+
+# Keil build artifacts
+*.o
+*.d
+*.axf
+*.htm
+*.lnp
+*.sct
+*.crf
+*.dep
+*.lst
+*.map
+*.i
+*.s
+*.tra
+*.build_log.htm
+*.Administrator
+*.bat
+Listings/
+Objects/
+
+# IDE settings
+*.uvoptx
+*.uvguix.*
+
+# Claude Code / Omni tools
+.claude/
+.omx/
+
+# Source videos (keep only GIFs)
+*.mp4
+
+# Duplicate images in doc root (use images/ subfolder)
+doc/image.png
+doc/image-*.png
+doc/*.jpg
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
