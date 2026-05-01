@@ -10,7 +10,7 @@
       <TargetName>N32WB031_STB_OTA_APP1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCOMPLIER506</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -444,6 +444,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\sdk\N32WB03x_SDK_V2.0.0\N32WB03x_SDK_V2.0.0\firmware\n32wb03x_std_periph_driver\src\n32wb03x_lpuart.c</FilePath>
             </File>
+            <File>
+              <FileName>n32wb03x_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\sdk\N32WB03x_SDK_V2.0.0\N32WB03x_SDK_V2.0.0\firmware\n32wb03x_std_periph_driver\src\n32wb03x_usart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -508,6 +513,11 @@
               <FileName>ns_log_lpuart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\sdk\N32WB03x_SDK_V2.0.0\N32WB03x_SDK_V2.0.0\middlewares\Nationstech\ble_library\ns_library\log\ns_log_lpuart.c</FilePath>
+            </File>
+            <File>
+              <FileName>ns_log_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\sdk\N32WB03x_SDK_V2.0.0\N32WB03x_SDK_V2.0.0\middlewares\Nationstech\ble_library\ns_library\log\ns_log_usart.c</FilePath>
             </File>
             <File>
               <FileName>ns_error.c</FileName>
@@ -1081,6 +1091,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\sdk\N32WB03x_SDK_V2.0.0\N32WB03x_SDK_V2.0.0\firmware\n32wb03x_std_periph_driver\src\n32wb03x_lpuart.c</FilePath>
             </File>
+            <File>
+              <FileName>n32wb03x_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\sdk\N32WB03x_SDK_V2.0.0\N32WB03x_SDK_V2.0.0\firmware\n32wb03x_std_periph_driver\src\n32wb03x_usart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1145,6 +1160,11 @@
               <FileName>ns_log_lpuart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\sdk\N32WB03x_SDK_V2.0.0\N32WB03x_SDK_V2.0.0\middlewares\Nationstech\ble_library\ns_library\log\ns_log_lpuart.c</FilePath>
+            </File>
+            <File>
+              <FileName>ns_log_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\sdk\N32WB03x_SDK_V2.0.0\N32WB03x_SDK_V2.0.0\middlewares\Nationstech\ble_library\ns_library\log\ns_log_usart.c</FilePath>
             </File>
             <File>
               <FileName>ns_error.c</FileName>

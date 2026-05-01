@@ -103,6 +103,7 @@ int main(void)
     }
     dfu_led_off(LED1_GPIO_PORT, LED_GPIO1_PIN);
     dfu_led_off(LED2_GPIO_PORT, LED_GPIO2_PIN);    
+    dfu_led_on(LED1_GPIO_PORT, LED_GPIO1_PIN);
 
 	app_ble_init();
 

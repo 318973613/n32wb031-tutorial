@@ -57,7 +57,9 @@
 #include "n32wb03x.h"
 #include "gapm_task.h"               // GAP Manager Task API
 #include "ns_sec.h"
+#include "ns_dfu_boot.h"
 #include "app_ble.h"
+#include "dfu_led.h"
 #include "app_dis.h"
 #if (BLE_APP_NS_IUS)
 #include "app_ns_ius.h"
@@ -163,6 +165,7 @@ void app_ble_gap_params_init(void)
 {
     struct ns_gap_params_t dev_info = {0};
     uint8_t *p_mac = SystemGetMacAddr();
+    const char* dev_name = CUSTOM_DEVICE_NAME;
     //get UUID from trim stored
     if(p_mac != NULL)
     {
@@ -178,9 +181,18 @@ void app_ble_gap_params_init(void)
     dev_info.mac_addr_type = GAPM_STATIC_ADDR;
     dev_info.appearance = 0;
     dev_info.dev_role = GAP_ROLE_PERIPHERAL;
+
+    if (CURRENT_APP_START_ADDRESS == NS_APP1_START_ADDRESS)
+    {
+        dev_name = "N32WB031_OTA_A1";
+    }
+    else if (CURRENT_APP_START_ADDRESS == NS_APP2_START_ADDRESS)
+    {
+        dev_name = "N32WB031_OTA_A2";
+    }
     
-    dev_info.dev_name_len = sizeof(CUSTOM_DEVICE_NAME)-1;
-    memcpy(dev_info.dev_name, CUSTOM_DEVICE_NAME, dev_info.dev_name_len); 
+    dev_info.dev_name_len = strlen(dev_name);
+    memcpy(dev_info.dev_name, dev_name, dev_info.dev_name_len); 
    
     dev_info.dev_conn_param.intv_min = MSECS_TO_UNIT(MIN_CONN_INTERVAL,MSECS_UNIT_1_25_MS);
     dev_info.dev_conn_param.intv_max = MSECS_TO_UNIT(MAX_CONN_INTERVAL,MSECS_UNIT_1_25_MS);
@@ -303,6 +315,7 @@ void app_ble_init(void)
  */
 void app_ble_connected(void)
 {
+    dfu_led_on(LED2_GPIO_PORT, LED_GPIO2_PIN);
     
     #if (BLE_APP_BATT)
     // Enable Battery Service
@@ -320,6 +333,7 @@ void app_ble_disconnected(void)
 {
     // Restart Advertising
     ns_ble_adv_start();
+    dfu_led_off(LED2_GPIO_PORT, LED_GPIO2_PIN);
 
 }
 

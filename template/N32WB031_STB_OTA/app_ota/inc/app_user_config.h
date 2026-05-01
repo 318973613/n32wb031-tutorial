@@ -60,7 +60,7 @@
 #include "ns_adv_data_def.h"
 
 /* Device name */
-#define CUSTOM_DEVICE_NAME                  "NATIONS"
+#define CUSTOM_DEVICE_NAME                  "N32WB031_OTA"
 #define CUSTOM_BLE_MAC_ADDRESS              "\x89\x22\x77\x44\x55\x66"
 
 /* adv configer*/
@@ -127,8 +127,8 @@
 #define NS_LOG_INFO_ENABLE       1
 #define NS_LOG_DEBUG_ENABLE      0
 
-#define NS_LOG_LPUART_ENABLE     1
-#define NS_LOG_USART_ENABLE      0
+#define NS_LOG_LPUART_ENABLE     0
+#define NS_LOG_USART_ENABLE      1
 #define NS_LOG_RTT_ENABLE        0
 
 #define NS_TIMER_ENABLE          1

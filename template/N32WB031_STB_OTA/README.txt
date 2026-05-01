@@ -1,29 +1,54 @@
-N32WB031 OTA Project Bundle
+N32WB031 OTA Workspace
 
-This directory contains the three core projects required for the official OTA flow:
+This folder is organized for readers who want to learn the OTA flow step by step.
 
-1. masterboot
-   - Project: N32WB031_STB_OTA_MASTERBOOT
-   - Purpose: bootloader / serial receiving / image jump
+Structure:
 
-2. app_ota
-   - Project: N32WB031_STB_OTA_APP
-   - Purpose: main BLE OTA application layer
+1. masterboot/
+   - Bootloader layer.
+   - First code that runs after reset.
 
-3. image_update
-   - Project: N32WB031_STB_OTA_IMAGE_UPDATE
-   - Purpose: image update layer used during OTA process
+2. app_ota/
+   - Main BLE OTA application.
+   - Contains APP1 / APP2 targets.
 
-Notes:
-1. OTA is not a single-project feature. It is a coordinated workflow across these projects.
-2. Build and flashing order matters.
-3. Follow the official Firmware Upgrade User's Guide when performing a full OTA test.
+3. image_update/
+   - Upgrade execution layer.
 
-Suggested learning order:
-1. Read masterboot first
-2. Then read app_ota
-3. Then read image_update
+4. common/
+   - Shared DFU helper source files.
 
-Suggested target order in app_ota:
-1. N32WB031_STB_OTA_APP1
-2. N32WB031_STB_OTA_APP2
+5. docs/
+   - Reading materials.
+   - Start with:
+     a. OTA升级工程说明.md
+     b. OTA第一次上电验证.md
+     c. OTA升级包生成说明.md
+     d. OTA蓝牙升级教程.md
+
+6. scripts/
+   - Helper scripts.
+   - flash_first_boot_verify_daplink.bat
+   - repack_and_flash_app1_daplink.bat
+   - generate_ota_package.bat
+
+7. output/
+   - Generated binaries, merged images, OTA zip package.
+
+Suggested reading order:
+
+1. docs/OTA升级工程说明.md
+2. docs/OTA第一次上电验证.md
+3. Build masterboot / APP1 / APP2 / image_update
+4. scripts/repack_and_flash_app1_daplink.bat
+5. docs/OTA升级包生成说明.md
+6. scripts/generate_ota_package.bat
+7. docs/OTA蓝牙升级教程.md
+
+Suggested practical order:
+
+1. Compile all three project groups.
+2. Flash first_boot_verify or repack_and_flash_app1_daplink.
+3. Confirm APP1 boots and advertises.
+4. Generate ota_dual_bank_v2.zip.
+5. Upgrade from APP1 to APP2 with the Android OTA app.
