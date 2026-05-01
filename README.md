@@ -1,6 +1,6 @@
 # N32WB031 BLE SoC 教程
 
-国民技术 N32WB031 蓝牙 5.1 SoC 开发教程，从开箱到 BLE 透传、OLED 显示、HID 蓝牙遥控器，提供完整的代码和文档。
+国民技术 N32WB031 蓝牙 5.1 SoC 开发教程，从开箱到 BLE 透传、OLED 显示、HID 蓝牙遥控器、OTA 空中升级，提供完整的代码和文档。
 
 ## 芯片简介
 
@@ -24,6 +24,7 @@
 | 第五章 | BLE 透传 (RDTSS) | `BLE_RDTSS` |
 | 第六章 | OLED 显示 | `BLE_RDTSS_OLED` |
 | 第七章 | HID 蓝牙拍照遥控器 | `HID_SWIPE_OLED` |
+| 第八章 | BLE OTA 空中升级 | `OTA` |
 
 完整文档见 [`doc/N32WB031 测评合集.md`](doc/N32WB031%20测评合集.md)。
 
